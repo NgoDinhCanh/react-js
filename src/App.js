@@ -1,13 +1,22 @@
-import "./App.css";
-import Game from "./components/tictactoe/Game";
-import GameUseReducer from "./components/useReducer/tictactoe/Game";
-
+import Card from "./components/card/Card";
+import Card2 from "./components/card/Card2";
+import CardList from "./components/card/CardList";
+import { GlobalStyle } from "./GlobalStyles";
+import { ThemeProvider } from "styled-components";
+const theme = {
+  colors: {
+    blue: "#2979ff",
+  },
+};
 function App() {
   return (
-    <>
-      <Game></Game>
-      <GameUseReducer></GameUseReducer>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <CardList>
+        <Card secondary></Card>
+        <Card2 secondary></Card2>
+      </CardList>
+    </ThemeProvider>
   );
 }
 
